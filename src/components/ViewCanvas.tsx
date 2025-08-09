@@ -30,16 +30,7 @@ export default function ViewCanvas()  {
         gl={{ antialias: true }}
         camera={{ fov: 30, }}
       > 
-      {/* <Float
-      speed={1} rotationIntensity={1} floatIntensity={1} floatingRange={[-0.1, 0.1]}
-      >
-
-      <SodaCan />
-      </Float> */}
-     {/* <FloatingCan />
-      <Environment files={"/hdr/lobby.hdr" } environmentIntensity={1.5} /> */}
-      {/* <ambientLight intensity={2} />
-      <spotLight intensity={3} position={[1,1,1]} /> */}
+     
     
   <Suspense fallback={null}>
           <View.Port />

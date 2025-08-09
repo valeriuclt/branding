@@ -13,11 +13,7 @@ type Props = {
 export default function Button({ buttonLink, buttonText, className,  color = "orange",
   size = "md" }: Props) {
   return (
-    <PrismicNextLink
-      // className={clsx(
-      //   "rounded-xl bg-green-800 px-5 py-4 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-150 hover:bg-orange-700 md:text-2xl",
-      //   className,
-      // )}
+    <PrismicNextLink 
        className={clsx(
               "button-cutout group mx-4 inline-flex items-center bg-gradient-to-b from-25% to-75% bg-[length:100%_400%] font-bold transition-[filter,background-position] duration-300 hover:bg-bottom",
               size === "sm" && "gap-2.5 py-2 text-base",

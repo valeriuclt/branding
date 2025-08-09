@@ -62,7 +62,7 @@
     );
   }
 }
-
+/* 
 .stack-layout {
   display: grid;
   grid-template-areas: "stack";
@@ -71,8 +71,8 @@
 
 .stack-layout > * {
   grid-area: stack;
-}
-
+} */
+/* 
 .skater-scribble-path {
   opacity: 0.8;
   stroke-dasharray: 2300;
@@ -83,7 +83,7 @@
 
 .skater:hover .skater-scribble-path {
   stroke-dashoffset: 0;
-}
+} */
 
 .slide-in-hidden {
   opacity: 0;

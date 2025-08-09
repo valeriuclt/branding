@@ -11,8 +11,8 @@ const Loader = dynamic(
   () => import("@react-three/drei").then((mod) => mod.Loader),
   { ssr: false },
 );
-type Props = {}
-export default function ViewCanvas({}: Props)  {
+// type Props = {}
+export default function ViewCanvas()  {
   return (
     <>
      <Canvas

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-
+import { JSX } from "react";
 type BoundedProps = {
   as?: React.ElementType;
   className?: string;
@@ -15,7 +15,7 @@ export const Bounded = ({
   return (
     <Comp
       className={clsx("px-4 first:pt-10 md:px-6", className)}
-      {...restProps}
+      {...restProps }
     >
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
         {children}

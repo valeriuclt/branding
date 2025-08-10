@@ -22,7 +22,7 @@ const SkyDive: FC<SkyDiveProps> = ({ slice }) => {
   className="skydive h-screen"
 >
   <h2 className="sr-only">{slice.primary.sentence}</h2>
-  <View className="h-screen w-screen">
+  <View className="h-screen w-full overflow-hidden">
     <Scene
       flavor={slice.primary.flavor}
       sentence={slice.primary.sentence}

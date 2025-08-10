@@ -92,7 +92,7 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="carousel relative grid h-screen grid-rows-[auto,4fr,auto] justify-center overflow-hidden bg-white py-12 text-white"
     >
-      <div className="background pointer-events-none absolute inset-0 bg-[#312e81] opacity-50" />
+      <div className="background bg-texture pointer-events-none absolute inset-0 bg-[#312e81] opacity-50" />
 
       <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#1e40af]" />
 

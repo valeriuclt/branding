@@ -90,7 +90,7 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
   data-slice-variation={slice.variation}
   className={clsx(
     // Stilurile din Bounding - fără max-width pentru background full-width
-     "px-4 py-10 md:px-6 md:py-16 ",
+     " px-4 py-8 md:px-6 md:py-16 ",
     // Stilurile originale
     "sticky top-[calc(var(--index)*1rem)]",
     theme === "Blue" && "bg-texture bg-brand-blue text-white",
@@ -101,23 +101,31 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
   style={{ "--index": index }}
  
 >
-  <div className="mx-auto w-full  ">
-    <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
-      <div
+  <div className="mx-auto w-full max-w-6xl">
+    <div className="  grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
+      {/* <div
         className={clsx(
-          "flex flex-col items-center gap-12 text-center  md:text-left md:pr-8",
-          slice.variation === "imageOnLeft" && "md:order-2 md:pl-8 md:pr-0 "
+           " flex flex-col px-4 md:px-8 items-center gap-8  md:items-start md:text-left", // <-- padding lateral adăugat pentru desktop
+          slice.variation === "imageOnLeft" && "md:order-2 md:pl-8 md:pr-0"
         )}
-      >
+      > */}
+       <div
+      className={clsx(
+        "flex flex-col gap-8 px-4 text-center md:px-0 md:text-left md:items-start",
+        slice.variation === "imageOnLeft"
+          ? "md:order-2 md:pl-8" // imaginea în stânga => textul are padding stânga
+          : "md:pr-8"            // imaginea în dreapta => textul are padding dreapta
+      )}
+    >
         <SlideIn>
-          <Heading className="mt-8 max-w-md text-balance text-4xl font-bold">
+          <Heading className="mt-4 max-w-md text-balance text-3xl font-bold md:mt-8 md:text-4xl">
             <PrismicText field={slice.primary.heading} />
           </Heading>
          
         </SlideIn>
         
         <SlideIn>
-          <div className="max-w-md text-2xl ">
+          <div className="max-w-md text-lg leading-relaxed md:text-2xl ">
             <PrismicRichText field={slice.primary.body} />
           </div>
         </SlideIn>
@@ -126,7 +134,7 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
           <ButtonLink
             field={slice.primary.button}
             color={theme === "Lime" ? "orange" : "lime"}
-            className="hero-button mt-12"
+            className="hero-button mt-8 md:mt-12"
           >
             {slice.primary.button.text}
           </ButtonLink>

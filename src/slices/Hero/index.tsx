@@ -103,11 +103,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 );
 
   return (
-    // <Bounded  
-    //   data-slice-type={slice.slice_type}
-    //   data-slice-variation={slice.variation}
-    //   className="hero opacity-0"
-    // >
+   
     <section  
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
@@ -118,7 +114,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     
     {isDesktop && (
       
-      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
+       <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen overflow-x-hidden md:block">
+    
           <Scene />
           <Bubbles count={300} speed={2} repeat={true} />
         </View>

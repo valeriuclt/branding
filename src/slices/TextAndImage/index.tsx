@@ -110,14 +110,14 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
         )}
       >
         <SlideIn>
-          <Heading className="mt-8 max-w-md text-balance text-5xl font-bold">
+          <Heading className="mt-8 max-w-md text-balance text-4xl font-bold">
             <PrismicText field={slice.primary.heading} />
           </Heading>
          
         </SlideIn>
         
         <SlideIn>
-          <div className="max-w-md text-2xl leading-relaxed ">
+          <div className="max-w-md text-2xl ">
             <PrismicRichText field={slice.primary.body} />
           </div>
         </SlideIn>

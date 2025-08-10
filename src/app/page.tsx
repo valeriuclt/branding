@@ -30,9 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-type TextAndImageBundleSlice = {
-  id: string;
-  slice_type: "text_and_image_bundle";
-  slices: Content.TextAndImageSlice[];
-};
+// type TextAndImageBundleSlice = {
+//   id: string;
+//   slice_type: "text_and_image_bundle";
+//   slices: Content.TextAndImageSlice[];
+// };
  

@@ -101,7 +101,7 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
   style={{ "--index": index }}
  
 >
-  <div className="mx-auto w-full max-w-6xl">
+  <div className="mx-auto w-full max-w-7xl">
     <div className="  grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
       {/* <div
         className={clsx(

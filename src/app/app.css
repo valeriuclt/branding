@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 
-/* .bg-texture {
+.bg-texture {
   background-image: url("/bg-texture.webp");
   background-size: 720px 460px;
   background-repeat: repeat;
   background-position: center;
-}  */
+} 
 
-.bg-texture {
+/* .bg-texture {
   background-image: url("/bg-texture.webp");
-  background-size: cover; /* În loc de 720px 460px */
+  background-size: cover; /* În loc de 720px 460px 
   background-repeat: no-repeat;
-    background-position: center;}
+    background-position: center;} */
 
 @media (min-width: 768px) {
   .bg-texture {

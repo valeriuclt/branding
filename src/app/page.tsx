@@ -9,7 +9,7 @@ import { components } from "@/slices";
 export default async function Home() {
   const client = createClient();
   const home = await client.getByUID("page", "home");
-  const slices =bundleTextAndImageSlices(home.data.slices)
+  // const slices =bundleTextAndImageSlices(home.data.slices)
   // <SliceZone> renders the page's slices.
   return <SliceZone slices={home.data.slices} components={components} />;
 }
@@ -35,31 +35,4 @@ type TextAndImageBundleSlice = {
   slice_type: "text_and_image_bundle";
   slices: Content.TextAndImageSlice[];
 };
-
-function bundleTextAndImageSlices(
-  slices: Content.PageDocumentDataSlicesSlice[]
-) {
-  const res: (
-    | Content.PageDocumentDataSlicesSlice
-    | TextAndImageBundleSlice
-  )[] = [];
-
-  for (const slice of slices) {
-    if (slice.slice_type !== "text_and_image") {
-      res.push(slice);
-      continue;
-    }
-
-    const bundle = res.at(-1);
-    if (bundle?.slice_type === "text_and_image_bundle") {
-      bundle.slices.push(slice);
-    } else {
-      res.push({
-        id: `${slice.id}-bundle`,
-        slice_type: "text_and_image_bundle",
-        slices: [slice],
-      });
-    }
-  }
-  return res;
-}
+ 

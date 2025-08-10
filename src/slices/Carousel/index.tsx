@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, JSX, useRef, useState } from "react";
+import { JSX, useRef, useState } from "react";
 import { Content } from "@prismicio/client";
 import {
   PrismicRichText,

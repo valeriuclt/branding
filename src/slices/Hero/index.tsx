@@ -1,5 +1,5 @@
 "use client"
-import { FC, JSX } from "react";
+import {  JSX } from "react";
 import { asText, Content } from "@prismicio/client";
 
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -9,16 +9,14 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-import { TextSplitter } from "@/components/TextSplitter";
-import { Bounded } from "@/components/Bounded";
-import Button from "@/components/Button";
+import { TextSplitter } from "@/components/TextSplitter"; 
 import { View } from "@react-three/drei";
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
 import { useStore } from "@/hooks/useStore";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { ButtonLink } from "@/components/ButtonLink";
+import { ButtonLink } from "@/components/ButtonLink"; 
 
 /**
  * Props for `Hero`.
@@ -105,20 +103,27 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 );
 
   return (
-    <Bounded
+    // <Bounded  
+    //   data-slice-type={slice.slice_type}
+    //   data-slice-variation={slice.variation}
+    //   className="hero opacity-0"
+    // >
+    <section  
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="hero opacity-0"
+      className="hero opacity-0 px-4 first:pt-10 md:px-6"
     >
-    {isDesktop && (
+      <div  className="mx-auto flex w-full max-w-7xl flex-col items-center">
 
+    
+    {isDesktop && (
+      
       <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
           <Scene />
           <Bubbles count={300} speed={2} repeat={true} />
         </View>
       )}
-      <div className="grid">
-     
+      <div className="grid"> 
     
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
@@ -127,7 +132,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 text={asText(slice.primary.heading)}
                 wordDisplayStyle="block"
                 className="hero-header-word"
-              />
+                />
                
             </h1>
             <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
@@ -140,12 +145,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               buttonLink={slice.primary.button_link}
               buttonText={slice.primary.button_text}
               className="hero-button mt-12"
-            /> */}
+              /> */}
             <ButtonLink
               field={slice.primary.button_link}
              color={ "lime"}
-              className="hero-button mt-12"
-            >{slice.primary.button_text}</ButtonLink>
+             className="hero-button mt-12"
+             >{slice.primary.button_text}</ButtonLink>
           </div>
         </div>
 
@@ -153,7 +158,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <PrismicNextImage
             className="w-full md:hidden"
             field={slice.primary.cans}
-          />
+            />
           <div>
             <h2 className="text-side-heading text-balance text-6xl font-black uppercase text-sky-950 lg:text-8xl">
               <TextSplitter text={asText(slice.primary.second_heading)} />
@@ -163,8 +168,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </Bounded>
+            
+    </section>
   );
 };
 
